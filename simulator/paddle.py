@@ -1,39 +1,36 @@
 import pygame
-import random
-from controls import *
-from env_vars import *
-
+from .env_vars import *
 
 def p1_handle_event(event):
     global p1_move_up, p1_move_down
 
     if event.type == pygame.KEYDOWN:
-        if event.key == P1_UP:
+        if event.key == pygame.K_w:
             p1_move_up = True
             p1_move_down = False
-        elif event.key == P1_DOWN:
+        elif event.key == pygame.K_s:
             p1_move_down = True
             p1_move_up = False
     elif event.type == pygame.KEYUP:
-        if event.key == P1_UP:
+        if event.key == pygame.K_w:
             p1_move_up = False
-        elif event.key == P1_DOWN:
+        elif event.key == pygame.K_s:
             p1_move_down = False
 
 def p2_handle_event(event):
     global p2_move_up, p2_move_down
 
     if event.type == pygame.KEYDOWN:
-        if event.key == P2_UP:
+        if event.key == pygame.K_UP:
             p2_move_up = True
             p2_move_down = False
-        elif event.key == P2_DOWN:
+        elif event.key == pygame.K_DOWN:
             p2_move_down = True
             p2_move_up = False
     elif event.type == pygame.KEYUP:
-        if event.key == P2_UP:
+        if event.key == pygame.K_UP:
             p2_move_up = False
-        elif event.key == P2_DOWN:
+        elif event.key == pygame.K_DOWN:
             p2_move_down = False
 
 def move():
